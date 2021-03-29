@@ -1,15 +1,16 @@
 package com.francozhang.springcloudinit.controller;
 
+import com.francozhang.springcloudinit.service.HelloUserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/HelloUser")
 public class HelloWorldController {
-    @RequestMapping("/say")
+    @RequestMapping("/Say")
     public String say(){
-        return "Hello World";
+        return new HelloUserService().GetHelloResponse();
 
     }
 }
